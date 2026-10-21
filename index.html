@@ -5,26 +5,46 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>NavAbhi — The Smart Space</title>
   <meta name="description" content="NavAbhi — The Smart Space. Launching soon.">
+  <meta name="theme-color" content="#faf8f5">
   <meta property="og:title" content="NavAbhi — The Smart Space">
   <meta property="og:url" content="https://navabhi.in/">
   <meta property="og:image" content="https://navabhi.in/assets/logo-full.png">
   <link rel="icon" href="assets/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,400&family=Inter:wght@300;400&display=swap" rel="stylesheet">
   <style>
+    :root { --bg:#faf8f5; --ink:#222021; --muted:#7a7472; --red:#ae2f33; --line:#e4dfda; }
     * { box-sizing:border-box; margin:0; }
-    body { min-height:100vh; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:48px;
-      padding:32px 16px; background:#fff; color:#222021; font-family:Inter,system-ui,sans-serif; }
-    img { width:min(320px, 70vw); height:auto; }
-    p { font-size:.85rem; letter-spacing:.35em; text-transform:uppercase; color:#ae2f33; }
-    a { margin-top:-24px; font-size:.95rem; color:#5e5a5b; text-decoration:none; border-bottom:1px solid #e0dcdc; padding-bottom:2px; }
-    a:hover { color:#222021; border-color:#222021; }
+    html, body { height:100%; }
+    body {
+      min-height:100svh; display:grid;
+      background:var(--bg) radial-gradient(ellipse at 50% 40%, #fff 0%, transparent 65%);
+      color:var(--ink); font-family:Inter,system-ui,sans-serif; font-weight:300;
+      padding:clamp(24px,5vw,48px) 16px;
+    }
+    main { display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; }
+    .logo { width:clamp(180px, 34vw, 300px); height:auto; margin-bottom:clamp(36px,6vh,64px); }
+    .rule { width:48px; height:1px; background:var(--red); margin-bottom:clamp(20px,3vh,28px); }
+    .soon { font-size:clamp(.72rem,1.6vw,.85rem); letter-spacing:.42em; text-transform:uppercase; color:var(--red); padding-left:.42em; }
+    .note { font-family:"Cormorant Garamond",Georgia,serif; font-style:italic; font-size:clamp(1.15rem,2.6vw,1.45rem); color:var(--muted); margin:clamp(14px,2vh,20px) 0 clamp(28px,4vh,40px); }
+    .mail { margin-top:clamp(14px,2vh,20px); font-size:clamp(.88rem,2vw,.95rem); color:var(--muted); text-decoration:none; letter-spacing:.04em;
+      border-bottom:1px solid var(--line); padding-bottom:3px; transition:color .3s, border-color .3s; }
+    .mail:hover, .mail:focus-visible { color:var(--ink); border-color:var(--ink); }
+    footer { text-align:center; font-size:.72rem; letter-spacing:.12em; color:#a39d99; padding-top:24px; }
+    main > * { opacity:0; transform:translateY(12px); animation:in 1s cubic-bezier(.2,.7,.2,1) forwards; }
+    main > :nth-child(2) { animation-delay:.25s; } main > :nth-child(3) { animation-delay:.4s; }
+    main > :nth-child(4) { animation-delay:.55s; } main > :nth-child(5) { animation-delay:.7s; }
+    @keyframes in { to { opacity:1; transform:none; } }
+    @media (prefers-reduced-motion:reduce) { main > * { animation:none; opacity:1; transform:none; } }
   </style>
 </head>
 <body>
-  <img src="assets/logo-full.png" alt="NavAbhi — The Smart Space">
-  <p>Launching Soon</p>
-  <a href="mailto:navabhi.space@gmail.com">navabhi.space@gmail.com</a>
+  <main>
+    <img class="logo" src="assets/logo-full.png" alt="NavAbhi — The Smart Space">
+    <div class="rule"></div>
+    <p class="soon">Launching Soon</p>
+    <a class="mail" href="mailto:navabhi.space@gmail.com">navabhi.space@gmail.com</a>
+  </main>
 </body>
 </html>
