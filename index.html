@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>NavAbhi — The Smart Space</title>
   <meta name="description" content="NavAbhi — The Smart Space. Launching soon.">
-  <meta name="theme-color" content="#faf8f5">
+  <meta name="theme-color" content="#c9d0da">
   <meta property="og:title" content="NavAbhi — The Smart Space">
   <meta property="og:url" content="https://navabhi.in/">
   <meta property="og:image" content="https://navabhi.in/assets/logo-full.png">
@@ -14,12 +14,21 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,400&family=Inter:wght@300;400&display=swap" rel="stylesheet">
   <style>
-    :root { --bg:#faf8f5; --ink:#222021; --muted:#7a7472; --red:#ae2f33; --line:#e4dfda; }
+    :root { --bg:#e3e7ed; --ink:#222021; --muted:#5f6670; --red:#ae2f33; --line:#b9c0ca; }
+    body::after { content:""; position:fixed; inset:0; pointer-events:none;
+      background:radial-gradient(ellipse at center, transparent 55%, rgba(60,72,90,.18) 100%); }
+    .stage { position:relative; display:flex; flex-direction:column; align-items:center; }
+    .stage::after { content:""; position:absolute; bottom:calc(clamp(36px,6vh,64px) - 22px); width:120%; height:18px; z-index:-1;
+      background:radial-gradient(ellipse at center, rgba(40,50,66,.28) 0%, rgba(40,50,66,0) 70%); filter:blur(4px); }
     * { box-sizing:border-box; margin:0; }
     html, body { height:100%; }
     body {
       min-height:100svh; display:grid;
-      background:var(--bg) radial-gradient(ellipse at 50% 40%, #fff 0%, transparent 65%);
+      background:
+        radial-gradient(ellipse 70% 55% at 50% 42%, rgba(255,255,255,.85) 0%, rgba(255,255,255,0) 70%),
+        radial-gradient(ellipse 120% 40% at 50% 100%, rgba(150,162,180,.35) 0%, rgba(150,162,180,0) 70%),
+        linear-gradient(180deg, #c9d0da 0%, #e3e7ed 38%, #eef1f4 62%, #d7dce4 100%);
+      background-attachment:fixed;
       color:var(--ink); font-family:Inter,system-ui,sans-serif; font-weight:300;
       padding:clamp(24px,5vw,48px) 16px;
     }
@@ -41,7 +50,7 @@
 </head>
 <body>
   <main>
-    <img class="logo" src="assets/logo-full.png" alt="NavAbhi — The Smart Space">
+    <div class="stage"><img class="logo" src="assets/logo-full.png" alt="NavAbhi — The Smart Space"></div>
     <div class="rule"></div>
     <p class="soon">Launching Soon</p>
     <a class="mail" href="mailto:navabhi.space@gmail.com">navabhi.space@gmail.com</a>
