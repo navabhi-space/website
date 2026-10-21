@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en-IN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Navabhi — The Smart Space</title>
+  <meta name="description" content="Navabhi — The Smart Space. Launching soon at navabhi.in.">
+  <meta property="og:title" content="Navabhi — The Smart Space">
+  <meta property="og:url" content="https://navabhi.in/">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='44' fill='%230f766e'/><text x='50' y='66' font-size='48' text-anchor='middle' fill='white' font-family='sans-serif'>N</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root { --bg:#f7f8f6; --fg:#14201d; --muted:#5b6b66; --accent:#0f766e; --card:#ffffff; --line:#e3e8e5; }
+    @media (prefers-color-scheme: dark) {
+      :root { --bg:#0d1412; --fg:#e8efec; --muted:#9aaba5; --accent:#2dd4bf; --card:#141e1b; --line:#22302c; }
+    }
+    * { box-sizing:border-box; margin:0; }
+    body { font-family:Inter,system-ui,sans-serif; background:var(--bg); color:var(--fg); line-height:1.6; }
+    .wrap { max-width:1040px; margin:0 auto; padding:0 16px; }
+    header { display:flex; justify-content:space-between; align-items:center; padding:24px 0; }
+    .logo { font-weight:800; font-size:1.3rem; letter-spacing:-.02em; }
+    .logo span { color:var(--accent); }
+    nav a { color:var(--muted); text-decoration:none; margin-left:20px; font-size:.95rem; }
+    nav a:hover { color:var(--fg); }
+    .hero { padding:96px 0 80px; }
+    .tag { display:inline-block; font-size:.8rem; font-weight:600; color:var(--accent); border:1px solid var(--line); border-radius:99px; padding:4px 12px; margin-bottom:20px; }
+    h1 { font-size:clamp(2.4rem,6vw,4.2rem); line-height:1.05; letter-spacing:-.03em; font-weight:800; max-width:14ch; }
+    h1 em { font-style:normal; color:var(--accent); }
+    .lead { color:var(--muted); font-size:1.15rem; max-width:52ch; margin:24px 0 36px; }
+    .btn { display:inline-block; background:var(--accent); color:#fff; padding:14px 26px; border-radius:10px; font-weight:600; text-decoration:none; }
+    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:16px; padding-bottom:80px; }
+    .card { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:28px; }
+    .card h3 { font-size:1.05rem; margin-bottom:8px; }
+    .card p { color:var(--muted); font-size:.95rem; }
+    .icon { font-size:1.6rem; margin-bottom:12px; }
+    .contact { text-align:center; padding:72px 0; border-top:1px solid var(--line); }
+    .contact h2 { font-size:1.8rem; margin-bottom:12px; }
+    .contact p { color:var(--muted); margin-bottom:24px; }
+    footer { text-align:center; color:var(--muted); font-size:.85rem; padding:32px 0; border-top:1px solid var(--line); }
+    @media (max-width:560px) { nav { display:none; } .hero { padding:56px 0; } }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="logo">Nava<span>bhi</span></div>
+      <nav><a href="#about">About</a><a href="#contact">Contact</a></nav>
+    </header>
+
+    <section class="hero">
+      <span class="tag">Launching soon</span>
+      <h1>The <em>Smart</em> Space.</h1>
+      <p class="lead">Navabhi is a space designed for curious minds — where ideas, technology and people come together to learn, build and explore.</p>
+      <a class="btn" href="#contact">Get in touch</a>
+    </section>
+
+    <section id="about" class="grid">
+      <div class="card"><div class="icon">💡</div><h3>Learn</h3><p>Hands-on experiences that make ideas tangible and spark curiosity.</p></div>
+      <div class="card"><div class="icon">🛠️</div><h3>Build</h3><p>Tools and room to prototype, tinker and bring projects to life.</p></div>
+      <div class="card"><div class="icon">🤝</div><h3>Connect</h3><p>A community of makers, educators and explorers sharing what they know.</p></div>
+    </section>
+
+    <section id="contact" class="contact">
+      <h2>Be the first to know</h2>
+      <p>We're getting ready to open our doors. Write to us for updates.</p>
+      <a class="btn" href="mailto:[contact-email]">Email us</a>
+    </section>
+  </div>
+  <footer>© <span id="y">2026</span> Navabhi · navabhi.in</footer>
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+</body>
+</html>
